@@ -22,51 +22,24 @@
   <header>
     <div class="heading">
       <h1>Todo</h1>
-      <img src="/images/icon-moon.svg" class="icon" alt="">
+      <div class="change-theme"><img src="/images/icon-moon.svg" class="icon light" alt=""></div>
     </div>
   </header>
   <main>
 
     <div class="addtodo">
       <label for="new-todo">
-        <input type="text" id="new-todo" class="new-todo">
+        <div class="input-circle"></div>
+        <input type="text" id="new-todo" class="new-todo" placeholder="Create a new todo...">
       </label>
 
 
       <ul class="todo-list">
-        <li>
-          <input type="checkbox" id="">
-          <label for=""></label>
-          <span>Complete online JavaScript course</span>
-        </li>
-        <li>
-          <input type="checkbox" id="">
-          <label for=""></label>
-          <span>Jog around the park 3x</span>
-        </li>
-        <li>
-          <input type="checkbox" id="">
-          <label for=""></label>
-          <span>10 minutes meditation</span>
-        </li>
-        <li>
-          <input type="checkbox" id="">
-          <label for=""></label>
-          <span>Read for 1 hour</span>
-        </li>
-        <li>
-          <input type="checkbox" id="">
-          <label for=""></label>
-          <span>Pick up groceries</span>
-        </li>
-        <li>
-          <input type="checkbox" id="">
-          <label for=""></label>
-          <span>Complete Todo App on Frontend Mentor</span>
-        </li>
+
+
         <li class="endbar">
-          <span class="count">5 items left</span>
-          <div>
+          <span class="count">0 items left</span>
+          <div class="filter-end">
             <button class="filter all">All</button>
             <button class="filter active">Active</button>
             <button class="filter completed">Completed</button>
@@ -93,7 +66,7 @@
 
 
 
-
+  <script src="/app.js"></script>
 </body>
 
 </html>
