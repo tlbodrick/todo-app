@@ -13,11 +13,19 @@
 --dark-greyish-blue: hsl(236, 9%, 61%);
 --very-dark-greyish-blue: hsl(235, 19%, 35%);
 
-}
+
 
 /* dark theme */
 
+--very-dark-blue: hsl(235, 21%, 11%);
+--very-dark-desaturated-blue: hsl(235, 24%, 19%);
+--light-greyish-blue-2: hsl(234, 39%, 85%);
+--light-greyish-blue-hover: hsl(236, 33%, 92%);
+--dark-greyish-blue-2: hsl(234, 11%, 52%);
+--very-dark-greyish-blue-2: hsl(233, 14%, 35%);
+--very-dark-greyish-blue-3: hsl(237, 14%, 26%);
 
+}
 
 /* ------ END COLORS ------ */
 
@@ -191,11 +199,10 @@ li:hover .del-btn {
 
 .filter-bar {
     width: 325px;
-    padding: 15px 70px;
+    padding: 15px 60px;
     background: #fff;
     margin-top: 15px;
     border-radius: 5px;
-
 }
 
 .filter {
@@ -211,11 +218,82 @@ li:hover .del-btn {
     color: var(--very-dark-greyish-blue);
 }
 
+.clickedfilter {
+color: var(--bright-blue)!important;
+}
+
 
 .instruc {
     margin-top: 40px;
     color: var(--dark-greyish-blue);
 }
+
+
+/* --------- DARK THEME ----------- */
+
+body.dark {
+    background-color: var(--very-dark-blue);
+}
+
+body.dark .input-circle {
+    border-color: var(--dark-greyish-blue-2);
+}
+
+body.dark .new-todo {
+    background: var(--very-dark-desaturated-blue);
+    color: var(--dark-greyish-blue-2);
+}
+
+body.dark .todo-list {
+    background: var(--very-dark-desaturated-blue);
+}
+
+body.dark .todo-list li {
+    border-bottom-color: var(--very-dark-greyish-blue-3);
+    color: var(--light-greyish-blue-2);
+}
+
+body.dark  input[type="checkbox"] {
+    border-color: var(--very-dark-greyish-blue-3);
+}
+
+body.dark  input[type="checkbox"]:checked ~ span {
+    color: var(--very-dark-greyish-blue-2);
+}
+
+body.dark .endbar span {
+    color: var(--very-dark-greyish-blue-2);
+}
+
+body.dark .filter-bar {
+    background: var(--very-dark-desaturated-blue);
+}
+
+body.dark .filter {
+    color: var(--very-dark-greyish-blue-2)
+}
+
+
+body.dark .filter:hover, .clear:hover {
+    color: var(--light-greyish-blue-2) !important;
+}
+
+
+body.dark .instruc {
+    color: var(--dark-greyish-blue-2);
+}
+
+
+
+/* --------- END DARK THEME ----------- */
+
+
+
+
+
+
+
+
 
 
 @media (min-width:376px) and (max-width:599px) {

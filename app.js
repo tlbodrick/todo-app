@@ -60,6 +60,9 @@ let filterCompleted = document.querySelector('.completed');
 let clearCompleted = document.querySelector('.clear');
 
 filterActive.addEventListener('click', function () {
+    filterActive.classList.add('clickedfilter');
+    filterAll.classList.remove('clickedfilter');
+    filterCompleted.classList.remove('clickedfilter');
     let checkboxes = document.querySelectorAll('.checkbox');
     for (let box of checkboxes) {
         if (box.classList.contains('finished')) {
@@ -68,9 +71,12 @@ filterActive.addEventListener('click', function () {
             box.parentElement.style.display = "flex";
         }
     }
-})
+});
 
 filterCompleted.addEventListener('click', function () {
+    filterCompleted.classList.add('clickedfilter');
+    filterAll.classList.remove('clickedfilter');
+    filterActive.classList.remove('clickedfilter');
     let checkboxes = document.querySelectorAll('.checkbox');
     for (let box of checkboxes) {
         if (box.classList.contains('notfinished')) {
@@ -83,6 +89,9 @@ filterCompleted.addEventListener('click', function () {
 
 
 filterAll.addEventListener('click', function () {
+    filterAll.classList.add('clickedfilter');
+    filterActive.classList.remove('clickedfilter');
+    filterCompleted.classList.remove('clickedfilter');
     let checkboxes = document.querySelectorAll('.checkbox');
     for (let box of checkboxes) {
         box.parentElement.style.display = "flex";
@@ -106,14 +115,17 @@ let changeTheme = document.querySelector('.change-theme');
 changeTheme.addEventListener('click', function () {
     let img = changeTheme.firstChild;
 
-    if (img.classList.contains('light')) {
-        img.src = '/images/icon-sun.svg';
-        img.classList.add('dark');
-        img.classList.remove('light')
-    } else if (img.classList.contains('dark')) {
+    if (img.classList.contains('dark')) {
+        // change icon
         img.src = '/images/icon-moon.svg';
-        img.classList.add('light');
+        // remove dark class
         img.classList.remove('dark');
+        document.querySelector('body').classList.remove('dark');
+    } else {
+        // change icon
+        img.src = '/images/icon-sun.svg';
+        // add dark class
+        img.classList.add('dark');
+        document.querySelector('body').classList.add('dark');
     }
-
-})
+});
