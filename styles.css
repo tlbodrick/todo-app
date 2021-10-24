@@ -46,7 +46,7 @@ body, button, input {
 }
 
 header {
-    background-image: url(/images/bg-mobile-light.jpg);
+    background-image: url(images/bg-mobile-light.jpg);
     height: 200px;
     z-index: -1;
 }
@@ -159,7 +159,7 @@ input[type="checkbox"]:not(:checked):hover {
 
 
 input[type="checkbox"]:checked {
-    background-image: url(/images/icon-check.svg), linear-gradient(145deg, #57ddff,#c058f3);
+    background-image: url(images/icon-check.svg), linear-gradient(145deg, #57ddff,#c058f3);
     border:none;
 }
 
@@ -311,7 +311,7 @@ body.dark .instruc {
 
 @media (min-width:376px) and (max-width:599px) {
     header {
-        background-image: url(/images/bg-desktop-light.jpg);
+        background-image: url(images/bg-desktop-light.jpg);
     }
 }
 
@@ -322,7 +322,7 @@ body.dark .instruc {
     }
 
     header {
-        background-image: url(/images/bg-desktop-light.jpg);
+        background-image: url(images/bg-desktop-light.jpg);
         height: 300px;
     }
 
