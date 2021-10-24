@@ -94,6 +94,8 @@ width: 20px;
   border: 1px solid var(--very-light-greyish-blue);
   background: transparent no-repeat center;
   margin: 0 20px;
+  position: relative;
+  top: 32px;
 }
 
 .new-todo, .todo-list, .heading {
@@ -107,7 +109,10 @@ width: 20px;
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 0 60px;
-    font-family: ''
+    color: var(--dark-greyish-blue);
+}
+
+.new-todo::placeholder {
     color: var(--dark-greyish-blue);
 }
 
@@ -126,6 +131,10 @@ width: 20px;
     font-size: 13px;
     display: flex;
     align-items: center;   
+}
+
+.todo-list li.over {
+    opacity: .2;
 }
 
 .todo-list, .new-todo {
@@ -226,6 +235,10 @@ color: var(--bright-blue)!important;
 .instruc {
     margin-top: 40px;
     color: var(--dark-greyish-blue);
+}
+
+.draggable {
+    cursor: move;
 }
 
 

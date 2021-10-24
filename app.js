@@ -10,9 +10,10 @@ let length = document.querySelectorAll('.notfinished').length;
 newtodo.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') {
         let newItem = document.createElement("li");
+        newItem.classList.add('draggable');
+        newItem.setAttribute('draggable', true);
         newItem.innerHTML = `<input type="checkbox" id="" class="checkbox notfinished"> <label for=""></label><span>${newtodo.value}</span><button class="del-btn"><img src="/images/icon-cross.svg" alt="" class="delete"></button>`;
         todolist.prepend(newItem);
-
         newtodo.value = '';
         length = document.querySelectorAll('.notfinished').length;
         count.innerText = `${length} items left.`
@@ -20,7 +21,6 @@ newtodo.addEventListener('keyup', function (e) {
     }
 
 })
-
 
 
 // add class if finished, if not finished, update counter
@@ -129,3 +129,73 @@ changeTheme.addEventListener('click', function () {
         document.querySelector('body').classList.add('dark');
     }
 });
+
+
+// draggable
+
+let draggables = null;
+
+
+document.addEventListener('mousedown', function (e) {
+    draggables = [...todolist.querySelectorAll('.draggable')];
+    let dragging = null;
+    if (e.target.className === 'draggable') {
+
+        function dragStart() {
+            dragging = this.closest('li');
+        }
+
+        function dragEnter() {
+            e.preventDefault();
+            this.classList.add('over');
+        }
+
+        function dragLeave() {
+            this.classList.remove('over');
+        }
+
+        function drop() {
+            let closestEl = this.closest('li');
+            closestEl.after(dragging);
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+            this.classList.remove('over');
+        }
+
+
+
+        for (let draggable of draggables) {
+
+            draggable.addEventListener('dragstart', dragStart);
+
+            draggable.addEventListener('dragenter', dragEnter);
+
+            draggable.addEventListener('dragleave', dragLeave);
+
+            draggable.addEventListener('drop', drop);
+
+            draggable.addEventListener('dragover', dragOver)
+
+
+        }
+
+
+
+    };
+
+
+
+
+
+})
+
+
+// grab and begin drag
+// find location of item closest to 
+// append 
+
+
+
+
