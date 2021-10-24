@@ -12,7 +12,7 @@ newtodo.addEventListener('keyup', function (e) {
         let newItem = document.createElement("li");
         newItem.classList.add('draggable');
         newItem.setAttribute('draggable', true);
-        newItem.innerHTML = `<input type="checkbox" id="" class="checkbox notfinished"> <label for=""></label><span>${newtodo.value}</span><button class="del-btn"><img src="/images/icon-cross.svg" alt="" class="delete"></button>`;
+        newItem.innerHTML = `<input type="checkbox" id="" class="checkbox notfinished"> <label for=""></label><span>${newtodo.value}</span><button class="del-btn"><img src="images/icon-cross.svg" alt="" class="delete"></button>`;
         todolist.prepend(newItem);
         newtodo.value = '';
         length = document.querySelectorAll('.notfinished').length;
